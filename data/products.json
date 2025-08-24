@@ -1,0 +1,117 @@
+[
+  {
+    "id": "1",
+    "name": "STRYDE AEROX",
+    "price": 129,
+    "description": "Lightweight running shoes for maximum comfort",
+    "image": "/images/shoe-01.jpg"
+  },
+  {
+    "id": "2",
+    "name": "NOVA BREEZE",
+    "price": 149,
+    "description": "High performance shoes with breathable mesh",
+    "image": "/images/shoe-02.jpg"
+  },
+  {
+    "id": "3",
+    "name": "VELOCITY X",
+    "price": 139,
+    "description": "Designed for speed with a cushioned sole",
+    "image": "/images/shoe-03.jpg"
+  },
+  {
+    "id": "4",
+    "name": "AERO RUNNER",
+    "price": 119,
+    "description": "Breathable and lightweight everyday running shoe",
+    "image": "/images/shoe-04.jpg"
+  },
+  {
+    "id": "5",
+    "name": "PHOENIX TRAIL",
+    "price": 169,
+    "description": "Trail running shoes with rugged grip",
+    "image": "/images/shoe-05.jpg"
+  },
+  {
+    "id": "6",
+    "name": "URBAN STRIDE",
+    "price": 99,
+    "description": "Casual yet sporty shoes for daily wear",
+    "image": "/images/shoe-06.jpg"
+  },
+  {
+    "id": "7",
+    "name": "LUNAR EDGE",
+    "price": 159,
+    "description": "Premium cushioned running shoe for long distances",
+    "image": "/images/shoe-07.jpg"
+  },
+  {
+    "id": "8",
+    "name": "HYDRA FLOW",
+    "price": 139,
+    "description": "Water-resistant shoes designed for all-weather use",
+    "image": "/images/shoe-08.jpg"
+  },
+  {
+    "id": "9",
+    "name": "TITAN PULSE",
+    "price": 179,
+    "description": "High-performance shoes built for training",
+    "image": "/images/shoe-09.jpg"
+  },
+  {
+    "id": "10",
+    "name": "AERO FLEX",
+    "price": 119,
+    "description": "Flexible and lightweight, ideal for workouts",
+    "image": "/images/shoe-10.jpg"
+  },
+  {
+    "id": "11",
+    "name": "BLAZE STRIKER",
+    "price": 129,
+    "description": "Bold design with enhanced comfort for everyday wear",
+    "image": "/images/shoe-11.jpg"
+  },
+  {
+    "id": "12",
+    "name": "ZENITH RUN",
+    "price": 149,
+    "description": "Top-tier running shoe with breathable mesh technology",
+    "image": "/images/shoe-12.jpg"
+  },
+  {
+    "id": "13",
+    "name": "IGNITE FORCE",
+    "price": 139,
+    "description": "Engineered with energy-return cushioning",
+    "image": "/images/shoe-13.jpg"
+  },
+  {
+    "id": "14",
+    "name": "GLIDE PATH",
+    "price": 109,
+    "description": "Smooth comfort with minimalistic design",
+    "image": "/images/shoe-14.jpg"
+  },
+  {
+    "id": "15",
+    "name": "STORM CRUISER",
+    "price": 169,
+    "description": "Rugged outdoor shoes built for extreme conditions",
+    "image": "/images/shoe-15.jpg"
+  },
+  {
+    "id": "16",
+    "name": "NOVA EDGE",
+    "price": 159,
+    "description": "Modern sporty shoe with futuristic design",
+    "image": "/images/shoe-16.jpg"
+  }
+]
+
+
+
