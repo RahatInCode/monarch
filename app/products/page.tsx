@@ -2,11 +2,24 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import productsData from "@/data/products.json";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ShoppingCart, Heart, Zap, ArrowRight, Star } from "lucide-react";
+import productsData from "@/data/products.json";
 
-// Define the Product type including category
+// --- Type for local static products ---
+
+// --- Type for DB products (MongoDB) ---
+type DBProduct = {
+  _id: string;
+  title: string;
+  description?: string;
+  price: number;
+  image?: string;
+  createdAt?: string;
+};
+
+// Final unified type
 type Product = {
   id: string;
   name: string;
@@ -16,9 +29,42 @@ type Product = {
   category: string;
 };
 
-const products: Product[] = productsData as Product[];
-
 export default function ProductsPage() {
+  const [dbProducts, setDbProducts] = useState<Product[]>([]);
+
+  // Fetch products from MongoDB
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("/api/products");
+        if (!res.ok) throw new Error("Failed to fetch products");
+        const data: DBProduct[] = await res.json();
+
+        // Convert DB schema → frontend schema
+        const normalized = data.map((p) => ({
+          id: p._id,
+          name: p.title,
+          description: p.description || "No description available",
+          price: p.price,
+          image: p.image || "/images/placeholder.jpg",
+          category: "New", // You can store category in DB later
+        }));
+
+        setDbProducts(normalized);
+      } catch (err) {
+        console.error("Error loading DB products:", err);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  // Merge static + DB products
+  const allProducts: Product[] = [
+    ...productsData,
+    ...dbProducts,
+  ] as Product[];
+
   return (
     <div className="px-6 sm:px-10 py-12 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-neutral-900 dark:to-neutral-950 min-h-screen">
       <div className="max-w-7xl mx-auto">
@@ -34,7 +80,7 @@ export default function ProductsPage() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {products.map((product, i) => (
+          {allProducts.map((product, i) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 30 }}
@@ -167,6 +213,7 @@ export default function ProductsPage() {
     </div>
   );
 }
+
 
 
 

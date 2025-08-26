@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, PackagePlus } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { useUser, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 
@@ -32,9 +32,24 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wide">
-          <Link href="/products" className="hover:opacity-80 transition-opacity">Shop</Link>
-          <Link href="/about" className="hover:opacity-80 transition-opacity">About</Link>
-          <Link href="/contact" className="hover:opacity-80 transition-opacity">Contact</Link>
+          <Link href="/products" className="hover:opacity-80 transition-opacity">
+            Shop
+          </Link>
+          <Link href="/about" className="hover:opacity-80 transition-opacity">
+            About
+          </Link>
+          <Link href="/contact" className="hover:opacity-80 transition-opacity">
+            Contact
+          </Link>
+
+          {isSignedIn && (
+            <Link
+              href="/my-products"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-300/80 dark:border-white/15 px-3 py-2 text-xs sm:text-sm font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
+            >
+              <PackagePlus className="size-4" /> My Products
+            </Link>
+          )}
         </nav>
 
         {/* Right Controls */}
@@ -69,6 +84,7 @@ export default function Navbar() {
     </div>
   );
 }
+
 
 
 
